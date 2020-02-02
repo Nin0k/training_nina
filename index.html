@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="author" content="Зубкова Н.В.">
+    <title>Отборочные задания</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="container">
+	<ul>
+		<li><a href="index.html">Задание 1</a></li>
+		<li><a href="task2.html">Задание 2</a></li>
+		<li><a href="task3.html">Задание 3</a></li>
+		<li><a href="task4.html">Задание 4</a></li>
+		<li><a href="task5.html">Задание 5</a></li>
+	</ul>
+		<h2>Задание 1. Сортировка</h2>
+		<p>Дан массив целых чисел. Напишите функцию, которая получает данный массив в качестве аргумента и сортирует его по возрастанию, а также программу для демонстрации работы этой функции</p>
+		<p>Исходный массив: 4,7,2,98,5,4,3,12,10,75,25,15,32,20,46</p>
+		<div id="finding"></div>
+		<div id="process"></div>
+		
+<script type="text/javascript"> 
+mas_source = [4, 7, 2, 98, 5, 4, 3, 12, 10, 75, 25, 15, 32, 20, 46];
+sort_mas (mas_source);
+
+function sort_mas (mas) {
+	for (i=0; i<mas.length-1; i++) {
+		for (j=i+1; j<mas.length; j++) {
+			if (mas[i]>mas[j]) {
+				help_per = mas[i];
+				mas[i] = mas[j];
+				mas[j] = help_per;
+				document.getElementById('process').innerHTML += "<p>Шаг сортировки: " + mas + "</p>";
+			}
+		}
+	}
+	document.getElementById('finding').innerHTML = "<p>Отсортированный массив: " + mas + "</p>";
+}
+</script> 
+</div>
+</body>
+</html>
